@@ -128,4 +128,56 @@ header p {
 }
 
 /* style the contact section */
-/* make the links beside each other with with display: flex; */
+/* style the contact section */
+#contact {
+  background-color: rgba(0, 0, 0, 0.8);
+  border-bottom: 5px solid crimson;
+}
+
+#contact .container {
+  margin: auto;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 70px;
+}
+
+#contact h2 {
+  font-size: 3rem;
+  color: white;
+  margin-bottom: 10px;
+}
+
+#contact p {
+  color: rgba(255, 255, 255, 0.9);
+  font-style: italic;
+  margin-bottom: 50px;
+}
+
+#contact .social-links {
+  list-style: none;
+}
+
+#contact .social-link-item {
+  display: inline-block;
+  margin: 20px;
+  transition: all 0.3s ease;
+}
+
+#contact .social-link-item:hover {
+  transform: translateY(10px);
+}
+
+#contact .social-link-item a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.5em;
+}
+
+/* style the footer */
+#footer {
+    text-align: center;
+    padding: 40px;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    font-size: 2em;
+}
