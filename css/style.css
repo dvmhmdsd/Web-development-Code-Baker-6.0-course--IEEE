@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  background-color: crimson;
+  overflow: hidden;
+}
+
+h1 {
+  color: white;
+  float: left;
+  width: 48%;
+  margin-top: 15px;
+  padding-left: 10px;
+}
+
+nav ul {
+  list-style: none;
+  float: left;
+  width: 48%;
+}
+
+nav ul li {
+  display: inline-block;
+  padding: 20px;
+  font-size: 20px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+nav ul li:hover {
+  background-color: darkcyan;
+}
+
+nav li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* style the header */
+header {
+  background-color: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  /* because the direction is column so the "justify-content" handles the vertical direction */
+  justify-content: center;
+}
+
+header p {
+  font-style: italic;
+  color: crimson;
+  font-size: 20px;
+}
+
+/* style the work section */
+#work {
+  background-color: darkcyan;
+  text-align: center;
+  padding-top: 80px;
+  padding-bottom: 70px;
+}
+
+#work h2 {
+  color: white;
+  text-decoration: underline;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+
+.container {
+  width: 85%;
+  margin: auto;
+}
+
+#work .grid {
+  overflow: hidden;
+  text-align: center;
+}
+
+#work .grid-item {
+  float: left;
+  width: 31%;
+  margin-right: 1%;
+  margin-left: 1%;
+  margin-bottom: 30px;
+  transition: all 0.2s ease-in;
+}
+
+#work .grid-item:hover {
+  transform: scale(1.03);
+  box-shadow: 1px 1px 10px 5px #000000;
+}
+
+#work .grid-item img {
+  max-width: 100%;
+}
+
+#work .grid-item-caption {
+  padding: 20px 19px;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  margin-top: -3px;
+  font-size: 20px;
+}
+
+#work .show-more {
+  padding: 10px;
+  font-size: 20px;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+#work .show-more:hover {
+  background-color: crimson;
+}
+
+#work .show-more:hover span {
+  margin-left: 4px;
+  transition: all 0.3s ease;
+}
+
+/* style the contact section */
+/* make the links beside each other with with display: flex; */
