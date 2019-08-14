@@ -20,6 +20,7 @@ nav ul {
   list-style: none;
   float: left;
   width: 48%;
+  margin-bottom: 0;
 }
 
 nav ul li {
@@ -109,7 +110,7 @@ header p {
 }
 
 #work .show-more:hover {
-  background-color: #be3144;
+  background-color: crimson;
 }
 
 #work .show-more:hover span {
