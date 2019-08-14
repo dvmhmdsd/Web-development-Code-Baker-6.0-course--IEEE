@@ -58,7 +58,7 @@ header p {
 
 /* style the work section */
 #work {
-  background-color: darkcyan;
+  background-color: #45567d;
   text-align: center;
   padding-top: 80px;
   padding-bottom: 70px;
@@ -71,21 +71,11 @@ header p {
   margin-bottom: 50px;
 }
 
-.container {
-  width: 85%;
-  margin: auto;
-}
-
 #work .grid {
-  overflow: hidden;
   text-align: center;
 }
 
 #work .grid-item {
-  float: left;
-  width: 31%;
-  margin-right: 1%;
-  margin-left: 1%;
   margin-bottom: 30px;
   transition: all 0.2s ease-in;
 }
@@ -95,7 +85,7 @@ header p {
   box-shadow: 1px 1px 10px 5px #000000;
 }
 
-#work .grid-item img {
+#work img {
   max-width: 100%;
 }
 
@@ -119,7 +109,7 @@ header p {
 }
 
 #work .show-more:hover {
-  background-color: crimson;
+  background-color: #be3144;
 }
 
 #work .show-more:hover span {
@@ -127,7 +117,6 @@ header p {
   transition: all 0.3s ease;
 }
 
-/* style the contact section */
 /* style the contact section */
 #contact {
   background-color: rgba(0, 0, 0, 0.8);
