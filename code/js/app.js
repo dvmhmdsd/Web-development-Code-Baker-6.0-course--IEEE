@@ -7,7 +7,7 @@ var author = document.querySelector(".book-author input");
 var desc = document.querySelector(".book-desc textarea");
 
 // handle submit event to form
-form.addEventListener("click", function(event) {
+form.addEventListener("submit", function(event) {
   // prevent the default action
   event.preventDefault();
 
@@ -46,6 +46,7 @@ form.addEventListener("click", function(event) {
 
   //   create object of book
   var book = {
+    id: String(Math.ceil(Math.random() * 1000000)),
     title: title.value,
     author: author.value,
     desc: desc.value
@@ -89,25 +90,22 @@ window.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-// remove from local Storage
-document.querySelector(".book-cards").addEventListener("click", function(e) {
-  if (
-    e.target.classList.contains("card-remove") ||
-    e.target.classList.contains("fa-trash-alt")
-  ) {
-    // get the items from localStorage and store it in array
-    // filter this store from the clicked item
-  }
-});
-
 // make the code DRY --> make a function to create a card with data provided
 function createbookCard(data) {
   var card = createElement("article", "card");
 
+  var cardTitle = createElement("h2", "card-title", data.title);
+
+  var cardDesc = createElement("p", "card-desc", data.desc);
+
+  var author = createElement("p", "card-author", data.author);
+
   var removeButton = createElement(
     "button",
     "card-remove",
-    '<i class="fa fa-trash-alt"></i>'
+    '<i class="fa fa-trash-alt"></i>',
+    "data-id",
+    data.id
   );
 
   removeButton.addEventListener("click", function() {
@@ -116,9 +114,9 @@ function createbookCard(data) {
   });
 
   //   append these elements into card
-  card.appendChild(createElement("h2", "card-title", data.title));
-  card.appendChild(createElement("p", "card-desc", data.desc));
-  card.appendChild(createElement("p", "card-author", data.author));
+  card.appendChild(cardTitle);
+  card.appendChild(cardDesc);
+  card.appendChild(author);
   card.appendChild(removeButton);
 
   // append card into book cards
@@ -126,13 +124,17 @@ function createbookCard(data) {
 }
 
 // create UI element
-function createElement(el, className, content) {
+function createElement(el, className, content, attr, attrVal) {
   var element = document.createElement(el);
 
   element.className = className;
 
   if (content) {
     element.innerHTML = content;
+  }
+
+  if (attr && attrVal) {
+    element.setAttribute(attr, attrVal);
   }
 
   return element;
@@ -143,16 +145,13 @@ document.querySelector(".book-cards").addEventListener("click", function(e) {
     e.target.classList.contains("card-remove") ||
     e.target.classList.contains("fa-trash-alt")
   ) {
-    // get the cards from local storage
     var store = JSON.parse(localStorage.getItem("cards"));
 
-    // iterate over the store with "forEach"
     store.forEach(function(el, i) {
       if (
         el.id === e.target.dataset.id ||
         el.id === e.target.parentElement.dataset.id
       ) {
-        // splice that element
         return store.splice(i, 1);
       }
     });
