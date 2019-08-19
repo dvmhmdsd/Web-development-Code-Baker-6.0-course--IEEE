@@ -102,8 +102,11 @@ $(".book-cards").on("click", function(e) {
     store.forEach(function(i, el) {
       // use .parents() in jquery
       if (
-        el.id === $(e.target).data(id) ||
-        el.id === $(e.target).parent().data(id)
+        el.id === $(e.target).data("id") ||
+        el.id ===
+          $(e.target)
+            .parent()
+            .data("id")
       ) {
         return store.splice(i, 1);
       }
