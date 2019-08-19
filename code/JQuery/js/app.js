@@ -27,14 +27,18 @@ form.on("submit", function(event) {
       !$(field).hasClass("invalid")
     ) {
       $(field).addClass("invalid");
-      $(field).parent().append(errorMsg);
+      $(field)
+        .parent()
+        .append(errorMsg);
 
       error += 1;
     } else {
       // reset the field if it's valid
       $(field).removeClass("invalid");
-      if ($(field).next('.error-message')) {
-        $(field).next().hide();
+      if ($(field).next(".error-message")) {
+        $(field)
+          .next(".error-message")
+          .hide();
       }
     }
   });
@@ -70,14 +74,23 @@ form.on("submit", function(event) {
 
   //   reset the form
   this.reset();
-  //   or
-  //   form.reset();
 });
 
 // show items on loading
-$(document).ready(function () {
-  showItems();
-})
+$(document).ready(function() {
+  // check if the local storage is empty
+  if (localStorage.getItem("cards") == null) {
+    return;
+  }
+
+  // get the cards from storage in the form of array of objects
+  var cards = JSON.parse(localStorage.getItem("cards"));
+
+  //   iterate over the array of cards
+  cards.forEach(function(element) {
+    createbookCard(element);
+  });
+});
 
 $(".book-cards").on("click", function(e) {
   if (
@@ -89,8 +102,8 @@ $(".book-cards").on("click", function(e) {
     store.forEach(function(i, el) {
       // use .parents() in jquery
       if (
-        el.id === e.target.dataset.id ||
-        el.id === e.target.parentElement.dataset.id
+        el.id === $(e.target).data(id) ||
+        el.id === $(e.target).parent().data(id)
       ) {
         return store.splice(i, 1);
       }
@@ -120,11 +133,15 @@ function createbookCard(data) {
 
   $(removeButton).on("click", function() {
     // remove from UI
-    $(this).parent().fadeOut();
+    $(this)
+      .parent()
+      .fadeOut();
   });
 
   //   append these elements into card and append it to parent
-  $(card).append(cardTitle, cardDesc, author, removeButton).appendTo($(".book-cards"));
+  $(card)
+    .append(cardTitle, cardDesc, author, removeButton)
+    .appendTo($(".book-cards"));
 }
 
 // create UI element
@@ -142,19 +159,4 @@ function createElement(el, className, content, attr, attrVal) {
   }
 
   return element;
-}
-
-function showItems() {
-  // check if the local storage is empty
-  if (localStorage.getItem("cards") == null) {
-    return;
-  }
-
-  // get the cards from storage in the form of array of objects
-  var cards = JSON.parse(localStorage.getItem("cards"));
-
-  //   iterate over the array of cards
-  cards.forEach(function(element) {
-    createbookCard(element);
-  });
 }
