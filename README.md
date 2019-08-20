@@ -11,5 +11,7 @@ This repository contains all Projects, presentations and tasks related to the co
 ## Session 1
 
 - Presentation: [Session 1 Presentation](https://docs.google.com/presentation/d/1l2zea2wZmfIadyODijcjP7vArT4e4skyyAEqnqYOqNo/edit?usp=sharing)
-- Session Code: [Simple portfolio page](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session1/code)
-- Session task: [Mockup A website](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session1/task)
+- Session Code:
+    - [Simple portfolio page](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session1/code)
+- Session task:
+    - [Mockup A website](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session1/task)
