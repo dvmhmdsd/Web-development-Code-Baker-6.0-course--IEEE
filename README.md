@@ -4,9 +4,9 @@ This repository contains all Projects, presentations and tasks related to the co
 
 ## General Info about the course
 
-- 12 sessions
-- Attendees: 36
-- Duration: `4` hours started from 1pm.
+- `12` sessions
+- Attendees: `36`
+- Duration: `4` hours started from `1pm`.
 
 ## Session 1
 
