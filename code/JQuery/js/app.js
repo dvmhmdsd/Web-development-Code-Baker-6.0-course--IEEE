@@ -10,10 +10,10 @@ var desc = $(".book-desc textarea");
 form.on("submit", function(event) {
   // prevent the default action
   event.preventDefault();
-
+  // debugger;
   // validate the form
   var error = 0;
-  var formfields = $(this).children("input, textarea");
+  var formfields = $(this).find("input, textarea");
   formfields.each(function(i, field) {
     var errorMsg = createElement(
       "p",
