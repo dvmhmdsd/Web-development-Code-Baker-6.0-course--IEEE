@@ -1,4 +1,4 @@
-## Session 3 Summary
+## Session 2 Summary
 
 _In this session we covered_ :-
 
