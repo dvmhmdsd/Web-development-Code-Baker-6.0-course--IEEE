@@ -1,5 +1,5 @@
 # Session 3 Task :-
-A series of tasks to train on basics of javascript
+A series of tasks to train on basics of javascript.
 
 ## Task 1:-
 What are results of these expressions ? and why ? 
@@ -32,4 +32,7 @@ What's Truthy and falsy values ?
    1. For an empty string or cancelled input, show “Canceled.”
 
 ## Task 4:-
-Write a script to get the prime numbers between 0 and 20
+Write a script to get the prime numbers between 0 and 20.
+
+### Note:-
+Write your solution for these tasks in a `.txt` file and upload it on your group for review from your technical support.
