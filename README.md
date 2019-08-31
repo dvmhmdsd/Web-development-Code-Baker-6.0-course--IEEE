@@ -29,4 +29,4 @@ This repository contains all Projects, presentations and tasks related to the co
 - Presentation: [Session 3 Presentation](https://js-presentation.netlify.com/)
 
 - Session task:
-    []()
+    [JS exercises](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session3/task)
