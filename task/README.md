@@ -34,5 +34,7 @@ What's Truthy and falsy values ?
 ## Task 4:-
 Write a script to get the prime numbers between 0 and 20.
 
+---
+
 ### Note:-
 Write your solution for these tasks in a `.txt` file and upload it on your group for review from your technical support.
