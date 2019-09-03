@@ -25,8 +25,14 @@ This repository contains all Projects, presentations and tasks related to the co
 - Session task:
     - [Product landing page](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session2/task)
 
-## session 3
+## Session 3
 - Presentation: [Session 3 Presentation](https://js-presentation.netlify.com/)
 
 - Session task:
     - [JS exercises](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session3/task)
+
+## Session 4
+- Presentation: [Session 4 Presentation](https://docs.google.com/presentation/d/1Hg2j95J3_Onjx0bKQMXTrkaiWpTFxTqp3EcOD164esc/edit?usp=sharing)
+-Session task:
+    - [JS exercises]()
+
