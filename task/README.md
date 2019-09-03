@@ -40,6 +40,7 @@ sum(arr) // 6
 
 ## Task 5:-
 Search for :
+
     1. Different ways to loop across an array.
     1. `this` keyword in objects
     1. Converting types manually, e.g: How to convert `2` into String ("2")
