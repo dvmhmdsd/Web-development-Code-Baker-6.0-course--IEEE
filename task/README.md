@@ -1,39 +1,49 @@
-# Session 3 Task :-
+# Session 4 Task :-
 A series of tasks to train on basics of javascript.
 
 ## Task 1:-
-What are results of these expressions ? and why ? 
+Write a function `pow(x, n)` that returns x in power n. Or, in other words, multiplies x by itself n times and returns the result.
 
-    "" + 1 + 0
-    "" - 1 + 0
-    true + false
-    6 / "3"
-    "2" * "3"
-    4 + 5 + "px"
-    "$" + 4 + 5
-    "4" - 2
-    "4px" - 2
-    7 / 0
-    "  -9  " + 5
-    "  -9  " - 5
-    null + 1
-    undefined + 1
+```javascript
+pow(3, 2) // 9
+pow(2, 4) // 16
+```
+_Bonus_: Make it dynamic, a prompt that asks user for the 2 numbers.
+
+_Source_: [javascript.info](http://javascript.info/)
 
 ## Task 2:-
-What's Truthy and falsy values ?
+Write a function that checks if an object has a specific property then return its value if it's existed.
+
+```javascript
+var obj = {job: "developer", access: true};
+isExisted(obj, job) // true, "developer"
+isExisted(obj, name) // false
+```
 
 ## Task 3:-
-- Write the code which asks for a login with prompt.
-- If the visitor enters "Admin", then prompt for a password, if the input is an empty line or Esc – show  “Canceled.”, if it’s another string – then show “I don’t know you”.
-- The password is checked as follows:
+Write a JavaScript program which prints the elements of the following array.
+_Note_: Use nested `for loops`.
 
-   1. If it equals “TheMaster”, then show “Welcome!”,
-   1. Another string – show “Wrong password”,
-   1. For an empty string or cancelled input, show “Canceled.”
+```javascript
+var arr = [[1, 2, 1, 24], [8, 11, 9, 4], [7, 0, 7, 27], [7, 4, 28, 14], [3, 10, 26, 7]];
+```
+_Source_: [w3resource](https://www.w3resource.com/)
 
 ## Task 4:-
-Write a script to get the prime numbers between 0 and 20.
+Write a function that return the sum of an array.
 
+```javascript
+var arr = [1, 2, 3]
+sum(arr) // 6
+```
+
+## Task 5:-
+Search for :
+
+    1. Different ways to loop across an array.
+    1. `this` keyword in objects
+    1. Converting types manually, e.g: How to convert `2` into String ("2")
 ---
 
 ### Note:-
