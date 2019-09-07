@@ -56,9 +56,9 @@
 
       **Links**:
 
-    - [W3Schools](https://www.w3schools.com/js/js_functions.asp)
-    - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
-    - [js.info](https://javascript.info/function-basics)
+        - [W3Schools](https://www.w3schools.com/js/js_functions.asp)
+        - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Functions)
+        - [js.info](https://javascript.info/function-basics)
 
 2.  Objects:
 
