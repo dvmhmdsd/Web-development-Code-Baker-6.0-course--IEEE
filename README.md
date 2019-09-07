@@ -37,3 +37,13 @@ This repository contains all Projects, presentations and tasks related to the co
 - Session task:
     - [JS exercises](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session4/task)
 
+## Session 5
+- Presentation: [Session 5 Presentation](https://docs.google.com/presentation/d/1_e_nutXmRVWpByxfEoY9L0b_ms5A-I3Dm9PIVT9U81M/edit?usp=sharing)
+
+- Session Code/Project:
+    - [Book List App](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session5/code)
+
+- Session task:
+    - [Book List App Edits](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session5/task)
+
+
