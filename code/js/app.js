@@ -12,7 +12,6 @@ form.addEventListener("submit", function(event) {
   event.preventDefault();
 
   // validate the form
-  var error = 0;
   var formfields = this.querySelectorAll("input, textarea");
   formfields.forEach(function(field) {
     var errorMsg = createElement(
@@ -29,7 +28,7 @@ form.addEventListener("submit", function(event) {
       field.classList.add("invalid");
       field.parentElement.appendChild(errorMsg);
 
-      error += 1;
+      return;
     } else {
       // reset the field if it's valid
       field.classList.remove("invalid");
@@ -38,11 +37,6 @@ form.addEventListener("submit", function(event) {
       }
     }
   });
-
-  //   check if there's an error --> if so, just return, else --> continue and create the card
-  if (error > 0) {
-    return;
-  }
 
   //   create object of book
   var book = {
@@ -145,8 +139,10 @@ document.querySelector(".book-cards").addEventListener("click", function(e) {
     e.target.classList.contains("card-remove") ||
     e.target.classList.contains("fa-trash-alt")
   ) {
+    // get the cards from local storage
     var store = JSON.parse(localStorage.getItem("cards"));
 
+    // iterate over the store with "forEach"
     store.forEach(function(el, i) {
       if (
         el.id === e.target.dataset.id ||
