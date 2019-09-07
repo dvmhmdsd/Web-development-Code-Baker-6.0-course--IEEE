@@ -22,37 +22,37 @@
 
     - Calling a function
 
-           ```javascript
-           function addTwoNumbers(x, y) {
-               return x + y;
-           }
+       ```javascript
+       function addTwoNumbers(x, y) {
+           return x + y;
+       }
 
-           let sum = addTwoNumbers(10, 20); //this stores 30 in the variable sum
+       let sum = addTwoNumbers(10, 20); //this stores 30 in the variable sum
 
-           console.log(addTwoNumbers(3, 5)); // this prints 8 to the console
-           ```
+       console.log(addTwoNumbers(3, 5)); // this prints 8 to the console
+       ```
 
     - passing a function as a parameter to another one
 
-          ```javascript
-          function printResult(x, y, func) { //func is a function
-              console.log(func(x, y));
-          }
+      ```javascript
+      function printResult(x, y, func) { //func is a function
+          console.log(func(x, y));
+      }
 
-          //So lets call the function
-          printResults(3, 5, function(x, y) {
-              return x+y;
-          }); // this prints 8 in the console
+      //So lets call the function
+      printResults(3, 5, function(x, y) {
+          return x+y;
+      }); // this prints 8 in the console
 
-          //or another way
-          function addTwoNumbers(x, y) {
-              return x + y;
-          }
+      //or another way
+      function addTwoNumbers(x, y) {
+          return x + y;
+      }
 
-          //Let's call it again
-          printResults(3, 5, addTwoNumbers) // this also prints 8 in the console
+      //Let's call it again
+      printResults(3, 5, addTwoNumbers) // this also prints 8 in the console
 
-          ```
+      ```
 
       **Links**:
 
@@ -66,12 +66,12 @@
 
     Syntax Example
 
-        ```javascript
-        var person = {
-            name: "John",
-            age: 20
-        };
-        ```
+    ```javascript
+    var person = {
+        name: "John",
+        age: 20
+    };
+    ```
 
     1. Concept of Objects
     2. Properties and methods
