@@ -77,3 +77,96 @@ Also we call it in the handler of the `click` event of the delete button
         .
         displayMessage(false); //Display the proper message for removing a book
     });
+
+# Without bonus, with animation !
+
+First, I'd like to thank [Animate.css](https://github.com/daneden/animate.css#usage-with-javascript) on github for this useful animation function. So let's see it
+
+    //Useful animation function, source : https://github.com/daneden/animate.css#usage-with-javascript
+    function animateCSS(el, anim, callback) {
+        //First add the animation class to the element
+        el.classList.add(anim);
+
+        //Define a function to apply after the end of the animation
+        function endOfAnimation() {
+            el.classList.remove(anim);
+            el.removeEventListener("animationend", endOfAnimation);
+            if (typeof callback === "function") callback();
+        }
+
+        //Make the function a handler to the animationend event of the element
+        el.addEventListener("animationend", endOfAnimation);
+    }
+
+What it does is that it adds the animation class to the `messageElement`, then waits untill the animation ends to remove it and call the `callback` function.
+
+But how about the animation class itself ?!
+in `style.css`, we first define how the animation works using **Keyframes**. [Read more about keyframes in CSS-Tricks](https://css-tricks.com/snippets/css/keyframe-animation-syntax/) ...
+
+    ....
+    /* Adding fadeIn, fadeOut Animation */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+
+    @keyframes fadeOut {
+        0% {
+            opacity: 1;
+        }
+        100% {
+            opacity: 0;
+        }
+    }
+    ....
+
+Then we define an animation class for each event
+
+    ....
+    .fade-in {
+        animation: fadeIn 0.5s ease;
+    }
+
+    .fade-out {
+        animation: fadeOut 0.5s ease;
+    }
+    ....
+
+> **Note**: It's always good practice to separate animation from the main styling
+
+> **Another Note**: This animation well only work for Chrome, if you want it to work for the other browsers add the prefixed rules for them, for example `-moz-` for Mozilla FireFox, `-o-` for Opera
+
+Finally we modify the `displayMessage` function in order to apply animation on show and hide as follows
+
+    function displayMessage(addOrDelete) {
+        //addOrDelete is a boolean param, true for add false for delete
+        let messageText = addOrDelete
+            ? "New Book Added successfully"
+            : "Book removed successfully";
+        let messageClass = addOrDelete ? "success" : "fail";
+
+        const messageElement = document.querySelector(".message");
+
+        //First, fill the inner HTML of the message with the proper text
+        messageElement.innerHTML = messageText;
+
+        //Second, add the proper class to it
+        messageElement.classList.add(messageClass);
+
+        //Third, show the message
+        messageElement.style.display = "block";
+
+        //Here we use animation to show the message with fade-in effect then hide it with fade-out effect using the useful function mentioned below
+        animateCSS(messageElement, "fade-in", () => {
+            setTimeout(function() {
+                animateCSS(messageElement, "fade-out", () => {
+                    messageElement.style.display = "none";
+                    messageElement.classList.remove(messageClass);
+                });
+            }, 2000);
+        });
+    }

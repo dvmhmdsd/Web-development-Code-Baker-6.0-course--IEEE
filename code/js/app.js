@@ -117,9 +117,29 @@ function displayMessage(addOrDelete) {
     //Third, show the message
     messageElement.style.display = "block";
 
-    //Fourth, hide the message after 2 sec and revert style changes
-    setTimeout(function() {
-        messageElement.style.display = "none";
-        messageElement.classList.remove(messageClass);
-    }, 2000);
+    //Here we use animation to show the message with fade-in effect then hide it with fade-out effect using the useful function mentioned below
+    animateCSS(messageElement, "fade-in", () => {
+        setTimeout(function() {
+            animateCSS(messageElement, "fade-out", () => {
+                messageElement.style.display = "none";
+                messageElement.classList.remove(messageClass);
+            });
+        }, 2000);
+    });
+}
+
+//Useful animation function, source : https://github.com/daneden/animate.css#usage-with-javascript
+function animateCSS(el, anim, callback) {
+    //First add the animation class to the element
+    el.classList.add(anim);
+
+    //Define a function to apply after the end of the animation
+    function endOfAnimation() {
+        el.classList.remove(anim);
+        el.removeEventListener("animationend", endOfAnimation);
+        if (typeof callback === "function") callback();
+    }
+
+    //Make the function a handler to the animationend event of the element
+    el.addEventListener("animationend", endOfAnimation);
 }
