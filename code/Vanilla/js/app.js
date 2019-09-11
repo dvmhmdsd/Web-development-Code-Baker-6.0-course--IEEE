@@ -1,19 +1,19 @@
 // select the form
-var form = $("#book-form");
+var form = document.querySelector("#book-form");
 
 // select the input and textarea fields
-var title = $(".book-title input");
-var author = $(".book-author input");
-var desc = $(".book-desc textarea");
+var title = document.querySelector(".book-title input");
+var author = document.querySelector(".book-author input");
+var desc = document.querySelector(".book-desc textarea");
 
 // handle submit event to form
-form.on("submit", function(event) {
+form.addEventListener("submit", function(event) {
   // prevent the default action
   event.preventDefault();
-  // debugger;
+
   // validate the form
-  var formfields = $(this).find("input, textarea");
-  formfields.each(function(i, field) {
+  var formfields = this.querySelectorAll("input, textarea");
+  formfields.forEach(function(field) {
     var errorMsg = createElement(
       "p",
       "error-message",
@@ -21,32 +21,28 @@ form.on("submit", function(event) {
     );
 
     if (
-      $(field).attr("required") &&
-      $(field).val() == "" &&
-      !$(field).hasClass("invalid")
+      field.hasAttribute("required") &&
+      field.value == "" &&
+      !field.classList.contains("invalid")
     ) {
-      $(field).addClass("invalid");
-      $(field)
-        .parent()
-        .append(errorMsg);
+      field.classList.add("invalid");
+      field.parentElement.appendChild(errorMsg);
 
       return;
     } else {
       // reset the field if it's valid
-      $(field).removeClass("invalid");
-      if ($(field).next(".error-message")) {
-        $(field)
-          .next(".error-message")
-          .hide();
+      field.classList.remove("invalid");
+      if (field.nextElementSibling) {
+        field.nextElementSibling.remove();
       }
     }
   });
 
   //   create object of book
   var book = {
-    title: $(title).val(),
-    author: $(author).val(),
-    desc: $(desc).val()
+    title: title.value,
+    author: author.value,
+    desc: desc.value
   };
 
   //   make array of objects --> it's value will come from localStorage
@@ -67,10 +63,12 @@ form.on("submit", function(event) {
 
   //   reset the form
   this.reset();
+  //   or
+  //   form.reset();
 });
 
 // show items on loading
-$(document).ready(function() {
+window.addEventListener("DOMContentLoaded", function() {
   // check if the local storage is empty
   var cards;
   if (localStorage.getItem("cards") == null) {
@@ -80,27 +78,23 @@ $(document).ready(function() {
   }
 
   //   iterate over the array of cards
-  cards.each(function(i, element) {
+  cards.forEach(function(element) {
+    // 1. create the card
     createbookCard(element);
   });
 });
 
-$(".book-cards").on("click", function(e) {
-  if (
-    $(e.target).hasClass("fa-trash-alt")
-  ) {
+document.querySelector(".book-cards").addEventListener("click", function(e) {
+  if (e.target.classList.contains("fa-trash-alt")) {
     var store = JSON.parse(localStorage.getItem("cards"));
 
-    store.each(function(i, el) {
-      // use .parents() in jquery
+    store.forEach(function(element, i) {
       if (
-        el.title ===
-          $(e.target)
-            .parent()
-            .sibling(".card-title")
-            .text()
+        element.title ===
+        e.target.parentElement.parentElement.querySelector(".card-title")
+          .innerText
       ) {
-        return store.splice(i, 1);
+        store.splice(i, 1);
       }
     });
 
@@ -111,7 +105,7 @@ $(".book-cards").on("click", function(e) {
 // make the code DRY --> make a function to create a card with data provided
 function createbookCard(data) {
   var card = createElement("article", "card");
-
+  // create the content of the card with coresponding classes and text content
   var cardTitle = createElement("h2", "card-title", data.title);
 
   var cardDesc = createElement("p", "card-desc", data.desc);
@@ -124,27 +118,30 @@ function createbookCard(data) {
     '<i class="fa fa-trash-alt"></i>'
   );
 
-  $(removeButton).on("click", function() {
-    // remove from UI
-    $(this)
-      .parent()
-      .fadeOut();
+  //   attach 'click' event to the removeButton
+  removeButton.addEventListener("click", function() {
+    this.parentElement.remove();
   });
 
-  //   append these elements into card and append it to parent
-  $(card)
-    .append(cardTitle, cardDesc, cardAuthor, removeButton)
-    .appendTo($(".book-cards"));
+  // 2. append children to card
+  card.appendChild(cardTitle);
+  //   append the other to card
+  card.appendChild(cardTitle);
+  card.appendChild(cardDesc);
+  card.appendChild(cardAuthor);
+  card.appendChild(removeButton);
+  // 3. append the card to book-cards
+  document.querySelector(".book-cards").appendChild(card);
 }
 
 // create UI element
 function createElement(el, className, content) {
   var element = document.createElement(el);
 
-  $(element).addClass(className);
+  element.className = className;
 
   if (content) {
-    $(element).html(content);
+    element.innerHTML = content;
   }
 
   return element;
