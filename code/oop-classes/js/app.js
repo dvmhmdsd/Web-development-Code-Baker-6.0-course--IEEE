@@ -1,107 +1,113 @@
 // Book Class
-function Book(title, desc, author) {
-  this.title = title;
-  this.desc = desc;
-  this.author = author;
+class Book {
+  constructor(title, desc, author) {
+    this.title = title;
+    this.desc = desc;
+    this.author = author;
+  }
 }
 
 // UI Class
-function UI() {}
-
-UI.displayBooks = function(books) {
-  if (books) {
+// function UI() {}
+class UI {
+  displayBooks(books) {
     books.forEach(book => this.createCardBook(book));
   }
-};
 
-UI.createCardBook = data => {
-  let card = UI.createElement("article", "card");
+  createCardBook(data) {
+    let { title, desc, author } = data;
+    let card = this.createElement("article", "card");
 
-  let cardTitle = UI.createElement("h2", "card-title", data.title);
+    let cardTitle = this.createElement("h2", "card-title", title);
 
-  let cardDesc = UI.createElement("p", "card-desc", data.desc);
+    let cardDesc = this.createElement("p", "card-desc", desc);
 
-  let cardAuthor = UI.createElement("p", "card-author", data.author);
+    let cardAuthor = this.createElement("p", "card-author", author);
 
-  let removeButton = UI.createElement(
-    "button",
-    "card-remove",
-    '<i class="fa fa-trash-alt"></i>'
-  );
+    let removeButton = this.createElement(
+      "button",
+      "card-remove",
+      '<i class="fa fa-trash-alt"></i>'
+    );
 
-  //   append these elements into card
-  card.appendChild(cardTitle);
-  card.appendChild(cardDesc);
-  card.appendChild(cardAuthor);
-  card.appendChild(removeButton);
+    //   append these elements into card
+    card.appendChild(cardTitle);
+    card.appendChild(cardDesc);
+    card.appendChild(cardAuthor);
+    card.appendChild(removeButton);
 
-  // append card into book cards
-  document.querySelector(".book-cards").appendChild(card);
-};
-
-UI.createElement = (el, className, content) => {
-  let element = document.createElement(el);
-
-  element.className = className;
-
-  if (content) element.innerHTML = content;
-
-  return element;
-};
-
-UI.removeElement = target => {
-  target.parentElement.remove();
-  UI.showAlert("success-message", "Element removed successfully");
-};
-
-UI.showAlert = function(className, content) {
-  let errorMsg = this.createElement("p", `${className}`, `${content}`);
-
-  document
-    .querySelector(".container")
-    .insertBefore(errorMsg, document.querySelector("#book-form"));
-
-  setTimeout(() => document.querySelector(`.${className}`).remove(), 2000);
-};
-
-// Store Class
-function Store() {}
-
-Store.prototype.getbooks = () => {
-  let books;
-  if (!localStorage.getItem("books")) {
-    books = [];
-  } else {
-    books = JSON.parse(localStorage.getItem("books"));
+    // append card into book cards
+    document.querySelector(".book-cards").appendChild(card);
   }
 
-  return books;
-};
+  createElement(el, className, content) {
+    let element = document.createElement(el);
 
-Store.prototype.saveBook = function(book) {
-  let books = this.getbooks();
+    element.className = className;
 
-  books.push(book);
+    if (content) element.innerHTML = content;
 
-  localStorage.setItem("books", JSON.stringify(books));
-};
+    return element;
+  }
 
-Store.prototype.removeBook = function(title) {
-  // debugger;
-  let store = this.getbooks();
+  removeElement(target) {
+    target.parentElement.remove();
+    this.showAlert("success-message", "Element removed successfully");
+  }
 
-  store.forEach((element, i) => {
-    if (element.title === title) {
-      store.splice(i, 1);
+  showAlert(className, content) {
+    let errorMsg = this.createElement("p", `${className}`, `${content}`);
+
+    document
+      .querySelector(".container")
+      .insertBefore(errorMsg, document.querySelector("#book-form"));
+
+    setTimeout(() => document.querySelector(`.${className}`).remove(), 2000);
+  }
+}
+
+// Store Class
+class Store {
+  getbooks() {
+    let books;
+    if (!localStorage.getItem("books")) {
+      books = [];
+    } else {
+      books = JSON.parse(localStorage.getItem("books"));
     }
-  });
 
-  localStorage.setItem("books", JSON.stringify(store));
-};
+    return books;
+  }
+
+  saveBook(book) {
+    let books = this.getbooks();
+
+    books.push(book);
+
+    localStorage.setItem("books", JSON.stringify(books));
+  }
+
+  removeBook(title) {
+    // debugger;
+    let store = this.getbooks();
+
+    store.forEach((element, i) => {
+      if (element.title === title) {
+        store.splice(i, 1);
+      }
+    });
+
+    localStorage.setItem("books", JSON.stringify(store));
+  }
+}
+
+// instanitiate the ui & store classes to work with it
+let ui = new UI();
+let store = new Store();
 
 // Display event
 document.addEventListener("DOMContentLoaded", () => {
-  UI.displayBooks(Store.prototype.getbooks());
+  ui.displayBooks(store.getbooks());
 });
 
 // Create Event
@@ -114,7 +120,7 @@ document.querySelector("#book-form").addEventListener("submit", function(e) {
 
   // validate the form
   if (title === "" || desc === "" || author === "") {
-    UI.showAlert("error-message", "Please fill these fields", this);
+    ui.showAlert("error-message", "Please fill these fields", this);
     return;
   }
 
@@ -123,12 +129,12 @@ document.querySelector("#book-form").addEventListener("submit", function(e) {
 
   // add book to ui
   //   debugger;
-  UI.createCardBook(book);
+  ui.createCardBook(book);
 
-  UI.showAlert("success-message", "Element added successfully");
+  ui.showAlert("success-message", "Element added successfully");
 
   // save book to the store
-  Store.prototype.saveBook(book);
+  store.saveBook(book);
 
   // reset the form
   this.reset();
@@ -137,11 +143,11 @@ document.querySelector("#book-form").addEventListener("submit", function(e) {
 // Remove Event
 document.querySelector(".book-cards").addEventListener("click", e => {
   if (e.target.classList.contains("fa-trash-alt")) {
-    Store.prototype.removeBook(
+    store.removeBook(
       e.target.parentElement.parentElement.querySelector(".card-title")
         .innerText
     );
 
-    UI.removeElement(e.target.parentElement);
+    ui.removeElement(e.target.parentElement);
   }
 });
