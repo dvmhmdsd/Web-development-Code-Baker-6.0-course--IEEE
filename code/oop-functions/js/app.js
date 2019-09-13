@@ -9,7 +9,9 @@ function Book(title, desc, author) {
 function UI() {}
 
 UI.displayBooks = function(books) {
-  books.forEach(book => this.createCardBook(book));
+  if (books) {
+    books.forEach(book => this.createCardBook(book));
+  }
 };
 
 UI.createCardBook = data => {
