@@ -59,3 +59,16 @@ This repository contains all Projects, presentations and tasks related to the co
 
 - Session task:
   - [Todo List App](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session6/task)
+
+
+## Session 7
+
+- Presentation: [Session 7 Presentation](https://docs.google.com/presentation/d/1BcQfDo05hXa8YCHZBlVd9QnoVXKk2I5MmL1r_EuAD40/edit?usp=sharing)
+
+- Session Code/Project:
+
+  - [Book List App - OOP (Prototype, Classes & Modules)](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session7/code)
+
+- Session task:
+  - [Todo List App](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session7/task)
+
