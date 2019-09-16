@@ -32,5 +32,6 @@
         2. Arrow functions:
             - [W3Schools](https://www.w3schools.com/js/js_arrow_function.asp)
             - [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+        3. [A great youtube tutorial about ES6](https://www.youtube.com/playlist?list=PL4cUxeGkcC9gKfw25slm4CUDUcM_sXdml)
 
 ## Thank for [Ebrahim Gomaa](https://github.com/HmanA6399) :heart:
