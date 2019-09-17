@@ -72,3 +72,16 @@ This repository contains all Projects, presentations and tasks related to the co
 - Session task:
   - [Todo List App](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session7/task)
 
+
+## Session 8
+
+- Presentation: [Session 8 Presentation](https://docs.google.com/presentation/d/1mv8-VbwmpE_GmqO7NQm00t2_i3Zlyh7AAuriRtwrBlo/edit?usp=sharing)
+
+- Session Code/Project:
+
+  - [Book List App - NPM, Webpack & Babel](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session8/code)
+
+- Session task:
+  - [Todo List App - bundled & optimized](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session8/task)
+
+
