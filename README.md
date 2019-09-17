@@ -20,7 +20,7 @@
 3. Make `webpack.config.js` file and add for it the `entry module` so that webpack can start its work from it.
 4. Add the `output` part to control the name of the output file & folder.
 5. Run `npm run start` and notice the creation of the production folder.
-6. move all the code you want to bundle or customize (`js/` & `css/` & `index.html`) into `src/` folder.
+6. move all the code you want to bundle or customize (`js/` & `css/` & `index.html`) into `src/` folder and edit the `entry` of the config file.
 7. `import` css file into the entry module (app.js) to make webpack consider it.
 8. Install `style-loader` & `css-loader`.
 9. Add the loaders to the `module` part of the config file inside the `rules` array:
