@@ -11,7 +11,7 @@
    - `npm install webpack --save-dev`
 1. install package as a dependency
    - `npm install package-name`
-1. After install it makes a `package.json` file with the info of the packages and `node_modules` & `package-lock.json` for the packages themselves.
+1. After installing a package, `npm` makes a `package.json` file with the info of the packages and `node_modules` & `package-lock.json` for the packages themselves.
 
 ## Webpack:
 
