@@ -30,4 +30,5 @@
 6. React uses `JSX` which is writing HTML inside Javascript which makes it simple to create, add classes & events to an element, so you need to add `babel` to your code to transpile jsx into understandable javascript code. 
 
 **Resources**
+
 [What's react - Mosh](https://youtu.be/N3AkSS5hXMA)
