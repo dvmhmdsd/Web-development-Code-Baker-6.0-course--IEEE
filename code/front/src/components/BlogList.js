@@ -24,19 +24,20 @@ export default class BlogList extends Component {
       }
     ]
   };
+
+  handleDelete = id => {
+    let blogs = this.state.blogs.filter(blog => {
+      return blog.id !== id;
+    })
+
+    this.setState({ blogs })
+  };
   render() {
     return (
       <div>
         {this.state.blogs &&
           this.state.blogs.map(blog => {
-            return (
-              <BlogCard
-                key={blog.id}
-                title={blog.title}
-                body={blog.body}
-                author={blog.author}
-              />
-            );
+            return <BlogCard key={blog.id} blog={blog} onDelete={this.handleDelete} />;
           })}
       </div>
     );
