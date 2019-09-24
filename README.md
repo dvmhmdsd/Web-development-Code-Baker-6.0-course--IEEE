@@ -4,9 +4,9 @@ This repository contains all Projects, presentations and tasks related to the co
 
 ## General Info about the course
 
-- `12` sessions
-- Attendees: `36`
-- Duration: `4` hours started from `1pm`.
+- `13` sessions
+- Attendees: `30`
+- Duration: `4` hours started from `3pm`.
 
 ## Session 1
 
@@ -60,7 +60,6 @@ This repository contains all Projects, presentations and tasks related to the co
 - Session task:
   - [Todo List App](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session6/task)
 
-
 ## Session 7
 
 - Presentation: [Session 7 Presentation](https://docs.google.com/presentation/d/1BcQfDo05hXa8YCHZBlVd9QnoVXKk2I5MmL1r_EuAD40/edit?usp=sharing)
@@ -72,7 +71,6 @@ This repository contains all Projects, presentations and tasks related to the co
 - Session task:
   - [Todo List App](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session7/task)
 
-
 ## Session 8
 
 - Presentation: [Session 8 Presentation](https://docs.google.com/presentation/d/1mv8-VbwmpE_GmqO7NQm00t2_i3Zlyh7AAuriRtwrBlo/edit?usp=sharing)
@@ -83,7 +81,6 @@ This repository contains all Projects, presentations and tasks related to the co
 
 - Session task:
   - [Todo List App - bundled & optimized](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session8/task)
-
 
 ## Session 9 (Front - React.js)
 
@@ -101,3 +98,13 @@ This repository contains all Projects, presentations and tasks related to the co
 
   - [Node.js Basics](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session9/code/back)
 
+## Session 10 (Front - React.js)
+
+- Presentation: [Session 10 Presentation (Front)](https://docs.google.com/presentation/d/1h6RccMza1cVdneG_OSPyeXiSEJyK2i5SiH9a0sRTiuA/edit?usp=sharing)
+
+- Session Code/Project:
+
+  - [Blog App](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session10/code/front)
+
+- Session task:
+  - [Meetup App](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session10/task)
