@@ -107,4 +107,16 @@ This repository contains all Projects, presentations and tasks related to the co
   - [Blog App](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session10/code/front)
 
 - Session task:
-  - [Meetup App](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session10/task)
+  - [Meetup App](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session10/task/front)
+
+## Session 10 (Back - Node.js)
+
+- Presentation: [Session 10 Presentation (Back)](https://docs.google.com/presentation/d/1SRXrPP8YoFAfeXQU8gkwUoCW3H43TuPsWFe--uPCpR8/edit?usp=sharing)
+
+- Session Code/Project:
+
+  - [Blog API](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session10/code/back)
+
+- Session task:
+  - [Meetup API](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session10/task/back)
+
