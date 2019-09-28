@@ -1,25 +1,19 @@
 import React, { Component } from 'react'
 import BlogCard from './BlogCard'
 
+import axios from 'axios';
+
 export default class BlogList extends Component {
     state = {
-        blogs: [
-            {
-                title: "Book1",
-                body: "awesome book",
-                author: "mohamed"
-            },
-            {
-                title: "Book2",
-                body: "awesome book",
-                author: "mohamed"
-            },
-            {
-                title: "Book3",
-                body: "awesome book",
-                author: "mohamed"
-            }
-        ]
+        blogs: []
+    }
+
+    componentDidMount () {
+      axios.get("http://localhost:4000/blogs").then(res => {
+        this.setState({
+          blogs: res.data
+        });
+      })
     }
   render() {
     return (

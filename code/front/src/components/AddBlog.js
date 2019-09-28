@@ -1,22 +1,28 @@
 import React, { Component } from "react";
 
-export default class AddBlog extends Component {
-    state = {
-        title: "",
-        body: "",
-        author: ""
-    }
+import axios from "axios";
 
-    handleChange = (e) => {
-        this.setState({
-            [e.target.name]: e.target.value
-        })
-    }
-    handleSubmit = (e) => {
-        e.preventDefault();
-        
-        console.log(this.state)
-    }
+export default class AddBlog extends Component {
+  state = {
+    title: "",
+    body: "",
+    author: ""
+  };
+
+  handleChange = e => {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  };
+  handleSubmit = e => {
+    e.preventDefault();
+
+    axios.post("http://localhost:4000/blogs", this.state).then(res => {
+      console.log(res);
+    });
+    // redirect to homepage
+    this.props.history.push("/");
+  };
   render() {
     return (
       <div>
@@ -45,9 +51,7 @@ export default class AddBlog extends Component {
             />
           </div>
           <div className="form-group">
-            <label htmlFor="exampleFormControlTextarea1">
-              body
-            </label>
+            <label htmlFor="exampleFormControlTextarea1">body</label>
             <textarea
               className="form-control"
               id="exampleFormControlTextarea1"
@@ -62,11 +66,10 @@ export default class AddBlog extends Component {
           </button>
         </form>
 
-
         <div className="preview">
-            <p> title:  {this.state.title} </p>
-            <p> body: {this.state.body} </p>
-            <p> author:  {this.state.author} </p>
+          <p> title: {this.state.title} </p>
+          <p> body: {this.state.body} </p>
+          <p> author: {this.state.author} </p>
         </div>
       </div>
     );
