@@ -119,3 +119,16 @@ This repository contains all Projects, presentations and tasks related to the co
 
 - Session task:
   - [Meetup API](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session10/task/back)
+
+
+## Session 11 (Back - Node.js)
+
+- Presentation: [Session 11 Presentation (Back)](https://docs.google.com/presentation/d/1NY4Br2OM2BjRAQfazQFxsWDAdY2t2IUD2dJpgTLgzv4/edit?usp=sharing)
+
+- Session Code/Project:
+
+  - [Connect Blog API with DB](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session11-b/code/back)
+
+- Session task:
+  - [Connect Meetup API with DB](https://github.com/mohamedsaad4/Web-development-Code-Baker-6.0-course--IEEE/tree/session11-b/task/back)
+
