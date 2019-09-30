@@ -1,67 +1,48 @@
 const express = require("express");
+const Blog = require("../models/Blog");
 
 const app = express.Router();
 
-let blogs = [
-  {
-    id: 1,
-    name: "title 1"
-  },
-  {
-    id: 2,
-    name: "title 2"
-  }
-];
-
 app.get("/", (req, res) => {
-  res.send(blogs);
+  Blog.find({}).then((result, err) => {
+    if (err) return err;
+    res.send(result);
+  });
 });
 
 app.post("/", (req, res) => {
-  blogs.push(req.body);
-  res.status(201).send("Blog added successfully");
+  let { title, body, author } = req.body;
+
+  let newBlog = new Blog({
+    title,
+    body,
+    author
+  });
+
+  newBlog.save().then((result, err) => {
+    res.status(201).send("blog added succcesssfully");
+  });
 });
 
 app.get("/:id", (req, res) => {
-  let blog = blogs.find(blog => {
-    return parseInt(req.params.id) === blog.id;
+  //   Blog.find({_id: req.params.id}).then((result, err) => {
+  //       res.send(result)
+  //   })
+  Blog.findById(req.params.id).then((result, err) => {
+    res.send(result);
   });
-
-  if (blog) {
-    res.send(blog);
-    return;
-  }
-
-  res.status(404).send("The id not found");
 });
 
 app.put("/:id", (req, res) => {
-  let blog = blogs.find(blog => {
-    return parseInt(req.params.id) === blog.id;
+  Blog.findByIdAndUpdate(req.params.id, req.body).then((result, err) => {
+    res.status(200).send("blog updated succcesssfully");
   });
-
-  if (blog) {
-    blog.name = req.body.name;
-    res.status(200).send("Blog updated successfully");
-    return;
-  }
-
-  res.status(404).send("Not found");
 });
 
 app.delete("/:id", (req, res) => {
-  let blog = blogs.find(blog => {
-    return parseInt(req.params.id) === blog.id;
-  });
-
-  if (blog) {
-    let index = blogs.indexOf(blog);
-    blogs.splice(index, 1);
-    res.status(200).send("Blog removed successfully");
-    return;
-  }
-
-  res.status(404).send("Not found");
+  Blog.findByIdAndRemove(req.params.id).then(() => {
+    res.status(200).send("blog removed succcesssfully");
+  })
 });
 
 module.exports = app;
